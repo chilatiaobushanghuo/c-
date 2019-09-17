@@ -1,0 +1,5 @@
+﻿  解决方案.cpp
+c:\users\administrator\desktop\c++作业二\c++作业二\解决方案.cpp(5): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\administrator\desktop\c++作业二\c++作业二\解决方案.cpp(27): error C3688: 文本后缀“；”无效；未找到文文本运算符或文本运算符模板“operator """"；”
+c:\users\administrator\desktop\c++作业二\c++作业二\解决方案.cpp(28): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\administrator\desktop\c++作业二\c++作业二\解决方案.cpp(37): error C2064: 项不会计算为接受 1 个参数的函数
