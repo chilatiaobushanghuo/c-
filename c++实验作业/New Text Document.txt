@@ -1,0 +1,98 @@
+#pragma once
+class dian
+{
+private:
+	double x;
+	double y;
+public:
+	dian();
+	dian(double x, double y);
+	dian(const dian& other);
+	~dian();
+	double getx();
+	double gety();
+	void setx(double sx);
+	void sety(double sy);
+	friend double GetLength(dian& A, dian& B);
+
+
+
+
+};
+double GetLength(dian& A, dian& B);
+#include "dian.h"
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+dian::dian()
+{
+	cout << "调用无参构造函数"<<endl;
+}
+dian::dian(double x, double y)
+{
+	cout << "调用有参构造函数"<<endl;
+	this->x = x;
+	this->y = y;
+}
+double dian::getx()
+{
+	return this->x;
+}
+double dian::gety()
+{
+	return this->y;
+}
+void dian::setx(double sx)
+{
+	this->x = sx;
+}
+void dian::sety(double sy)
+{
+	this->y = sy;
+}
+
+dian::~dian()
+{
+	cout << "调用析构函数"<<endl;
+}
+
+double GetLength(dian & A, dian & B)
+{
+	double a = A.x;
+	double d = A.y;
+	double x = B.x;
+	double b = B.y;
+	double c = sqrt((a-x)*(a-x) + (d-b) * (d-b));
+	return c;
+}
+int main()
+{
+	dian array_stack[10];
+	double u[10];
+	for (int i = 0;i < 10;i++)
+	{
+		cin >> u[i];
+		array_stack[i].setx(u[i]);
+		array_stack[i].sety(u[i]);
+	}
+	dian *array_heap = new dian[10];
+	double s[10];
+	for (int i = 0;i < 10;i++)
+	{
+		cin >> s[i];
+		array_heap[i].setx(s[i]);
+		array_heap[i].sety(s[i]);
+
+	}
+	double a[10];
+	for (int i = 0; i < 10; i++)
+	{
+		a[i] = GetLength(array_heap[i], array_stack[i]);
+		cout << a[i]<<endl;
+	}
+	delete[] array_heap;
+	system("pause");
+	return 0;
+
+}
